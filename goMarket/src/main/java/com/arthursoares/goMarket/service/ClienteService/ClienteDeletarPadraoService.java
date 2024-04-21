@@ -3,7 +3,9 @@ package com.arthursoares.goMarket.service.ClienteService;
 import com.arthursoares.goMarket.exception.ClienteException.ClienteNaoExisteException;
 import com.arthursoares.goMarket.model.Cliente;
 import com.arthursoares.goMarket.repository.ClienteRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ClienteDeletarPadraoService implements ClienteDeletarService {
     ClienteRepository clienteRepository;
 

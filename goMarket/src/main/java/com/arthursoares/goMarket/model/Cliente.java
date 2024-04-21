@@ -15,9 +15,9 @@ import lombok.NoArgsConstructor;
 @Table(name = "clientes")
 public class Cliente {
 
-    @JsonProperty("id")
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "clientes_SEQ")
+    @SequenceGenerator(name = "clientes_SEQ", sequenceName = "clientes_SEQ", allocationSize = 1)
     private Long id;
 
     @JsonProperty("nome")
