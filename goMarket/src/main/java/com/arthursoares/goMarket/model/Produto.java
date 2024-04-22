@@ -7,6 +7,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Data
 @Builder
@@ -17,21 +20,26 @@ public class Produto {
 
     @JsonProperty("id")
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "produtos_SEQ")
+    @SequenceGenerator(name = "produtos_SEQ", sequenceName = "produtos_SEQ", allocationSize = 1)
     private Long id;
 
     @JsonProperty("nome")
     @Column(nullable = false)
-    private Double nome;
+    private String nome;
 
     @JsonProperty("descricao")
-    private Double descricao;
+    private String descricao;
 
     @JsonProperty("quantidadeDisponivel")
     @Column(nullable = false)
-    private Double quantidadeDisponivel;
+    private int quantidadeDisponivel;
 
     @JsonProperty("preco")
     @Column(nullable = false)
     private Double preco;
+
+    @ManyToMany(mappedBy = "produtos")
+    private List<Pedido> pedidos = new ArrayList<>();
+
 }

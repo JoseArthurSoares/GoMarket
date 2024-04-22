@@ -4,7 +4,6 @@ import com.arthursoares.goMarket.dto.ClienteDTO.ClienteResponseDTO;
 import com.arthursoares.goMarket.exception.ClienteException.ClienteNaoExisteException;
 import com.arthursoares.goMarket.model.Cliente;
 import com.arthursoares.goMarket.repository.ClienteRepository;
-import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 @Service

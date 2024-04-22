@@ -16,7 +16,14 @@ public class ProdutoPostPutRequestDTO {
 
     @JsonProperty("nome")
     @NotBlank(message = "Nome obrigatorio")
-    private Double nome;
+    private String nome;
+
+    @JsonProperty("descricao")
+    private String descricao;
+
+    @JsonProperty("quantidadeDisponivel")
+    @NotBlank(message = "Quantidade disponivel obrigatorio")
+    private int quantidadeDisponivel;
 
     @JsonProperty("preco")
     @NotBlank(message = "Preco obrigatorio")

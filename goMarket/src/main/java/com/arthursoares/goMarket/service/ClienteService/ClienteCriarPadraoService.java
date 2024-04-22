@@ -1,6 +1,6 @@
 package com.arthursoares.goMarket.service.ClienteService;
 
-import com.arthursoares.goMarket.dto.ClienteDTO.ClientePostPutRequestDTO;
+import com.arthursoares.goMarket.dto.ClienteDTO.ClientePostRequestDTO;
 import com.arthursoares.goMarket.model.Cliente;
 import com.arthursoares.goMarket.repository.ClienteRepository;
 import org.modelmapper.ModelMapper;
@@ -17,8 +17,8 @@ public class ClienteCriarPadraoService implements ClienteCriarService {
     }
 
     @Override
-    public Cliente criar(ClientePostPutRequestDTO clientePostPutRequestDTO) {
-        Cliente cliente = this.modelMapper.map(clientePostPutRequestDTO, Cliente.class);
+    public Cliente criar(ClientePostRequestDTO clientePostRequestDTO) {
+        Cliente cliente = this.modelMapper.map(clientePostRequestDTO, Cliente.class);
         return this.clienteRepository.save(cliente);
     }
 }
